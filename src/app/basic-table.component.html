@@ -6,13 +6,14 @@
   </thead>
   <tbody>
     <tr mdbTableCol *ngFor="let el of elements">
-      <div>
-  youtubeUrl = "https://www.youtube.com/watch?v=Exsljuc_hvs";
-</div>
-      <th scope="row">{{el.id}}</th>
-      <td>{{el.url}}</td>
-      <td>{{el.last}}</td>
+         <th scope="row">{{el.id}}</th>
+         <td>{{el.url}}</td>
+        
+      <td> {{el.first}}</td>
+      <td> <div [innerHtml]=el.last></div></td>
       <td>{{el.handle}}</td>
     </tr>
   </tbody>
 </table>
+ 
+      
