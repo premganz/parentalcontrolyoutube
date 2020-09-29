@@ -4,12 +4,15 @@
       <th *ngFor="let head of headElements" scope="col">{{head}} </th>
     </tr>
   </thead>
-  <tbody>
-    <tr mdbTableCol *ngFor="let el of elements">
-         <td scope="row">{{el.id}}</td>
-         <td> <div [innerHtml]=el.last></div></td>
-    </tr>
-  </tbody>
+<tbody>
+	<tr mdbTableCol *ngFor="let el of elements">
+		<td scope="row">{{el.topic}}</td>
+		<td >
+
+			<div [innerHtml]=e2></div>
+		</td>
+	</tr>
+</tbody>
 </table>
  
       

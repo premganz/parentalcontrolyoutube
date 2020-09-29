@@ -12,11 +12,22 @@ templateUrl: './basic-table.component.html',
 
 export class BasicTableComponent {
  
-   NAMES = [];
+   TOPICS = [];
+
   URLS=[
     "https://www.youtube.com/Exsljuc_hvs","https://vimeo.com/197933516",
     "https://www.youtube.com/watch?v=o5cELP06Mik",
     "https://www.youtube.com/watch?v=W4Ou96H-cPc"
+  ]
+  DATAMAP=[
+    {
+      topic:'songs',
+      urls: [
+    "https://www.youtube.com/Exsljuc_hvs","https://vimeo.com/197933516",
+    "https://www.youtube.com/watch?v=o5cELP06Mik",
+    "https://www.youtube.com/watch?v=W4Ou96H-cPc"
+  ]
+    }
   ]
   // string1=this.embedService(this.URLS[0])
   string2=''
@@ -25,21 +36,37 @@ export class BasicTableComponent {
    
   }
  
-  func3: any= function loopOn2(){
-   
-       for (let i = 1; i < this.URLS.length; i++) {
-    let newName = {
-       id:i.toString(),
-       last:this.func1(this.URLS[i])
-    };
-    console.log(this.URLS[i]); // 1, "string", false
-   this.NAMES.push(newName);
-  
-}
+  func3: any = function loopOn2() {
+    for (let i = 1; i < this.URLS.length; i++) {
+      let newName = {
+        id: i.toString(),
+        last: this.func1(this.URLS[i])
+      };
+      console.log(this.URLS[i]); // 1, "string", false
+      this.NAMES.push(newName);
+    }
     }
   
-  
-  elements: any = this.NAMES
+  func4: any = function loopOn3() {
+     console.log("entering");
+     console.log(this.DATAMAP);
+    for (let i = 0; i < this.DATAMAP.length; i++) {
+      let topicSet = this.DATAMAP[i];
+      let videoListItem = {
+        topic: topicSet.topic,
+        videos: []        
+      }
+      console.log(topicSet);
+      for (let j = 0; j < topicSet.urls.length; j++) {
+        videoListItem.videos.push(this.func1(topicSet.urls[j]))
+      }
+      console.log(videoListItem);
+       this.TOPICS.push(videoListItem);
+       
+    }
+  }
+    
+  elements: any = this.TOPICS
   
   
   headElements = ['ID', 'First', 'Last', 'Handle'];
@@ -49,7 +76,8 @@ export class BasicTableComponent {
   ){}
   
 ngOnInit(){
-  this.func3();
+  this.func4();
+  console.log(this.TOPICS);
 }
 
 }
