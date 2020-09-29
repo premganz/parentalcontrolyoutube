@@ -1,4 +1,4 @@
-<table mdbTable>
+<table mdbTable  >
   <thead>
     <tr>
       <th *ngFor="let head of headElements" scope="col">{{head}} </th>
@@ -6,12 +6,8 @@
   </thead>
   <tbody>
     <tr mdbTableCol *ngFor="let el of elements">
-         <th scope="row">{{el.id}}</th>
-         <td>{{el.url}}</td>
-        
-      <td> {{el.first}}</td>
-      <td> <div [innerHtml]=el.last></div></td>
-      <td>{{el.handle}}</td>
+         <td scope="row">{{el.id}}</td>
+         <td> <div [innerHtml]=el.last></div></td>
     </tr>
   </tbody>
 </table>
