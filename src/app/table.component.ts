@@ -14,6 +14,8 @@ export class BasicTableComponent {
  
    TOPICS = [];
 
+
+NAMES=[]
   URLS=[
     "https://www.youtube.com/Exsljuc_hvs","https://vimeo.com/197933516",
     "https://www.youtube.com/watch?v=o5cELP06Mik",
@@ -21,11 +23,27 @@ export class BasicTableComponent {
   ]
   DATAMAP=[
     {
-      topic:'songs1',
+      topic:'SONGS',
       urls: [
-    "https://www.youtube.com/Exsljuc_hvs","https://vimeo.com/197933516",
+    "https://www.youtube.com/watch?v=eFjjO_lhf9c",
+    "https://vimeo.com/197933516",
     "https://www.youtube.com/watch?v=o5cELP06Mik",
-    "https://www.youtube.com/watch?v=W4Ou96H-cPc"
+    "https://www.youtube.com/watch?v=W4Ou96H-cPc",
+    "https://www.youtube.com/watch?v=qc2xDpwLryM",
+    "https://www.youtube.com/watch?v=EqPtz5qN7HM",
+    "https://www.youtube.com/watch?v=hCuMWrfXG4E",
+
+
+  ]
+    },
+    {
+      topic:'ADVENTURE',
+      urls: [
+    "https://www.dailymotion.com/video/x20qnej_red-bull-presents-wild-ride-bmx-mtb-dirt_sport",
+    "https://www.youtube.com/watch?v=ZDbNe3mS0aw",
+    "https://www.youtube.com/watch?v=o5cELP06Mikhttps://www.youtube.com/watch?v=iDlLCKnOB2M",
+    
+
   ]
     }
   ]
@@ -68,9 +86,9 @@ export class BasicTableComponent {
   }
     
   elements: any = this.TOPICS
-  // elements: any = this.TOPICS[0].videos
+  // elements: any = this.NAMES
   
-  headElements = ['ID', 'First', 'Last', 'Handle'];
+  headElements = ['TOPIC', 'VIDEOS'];
  constructor(
     private embedService: EmbedVideoService    
   

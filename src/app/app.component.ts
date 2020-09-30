@@ -8,7 +8,7 @@ import { EmbedVideoService } from 'ngx-embed-video';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  name = 'Parental Control your Youtube for kids';
+  name = 'Parental Control Videos';
 
   yt_iframe_html: any;
   vimeo_iframe_html: any;
