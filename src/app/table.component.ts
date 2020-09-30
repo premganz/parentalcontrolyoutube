@@ -21,7 +21,7 @@ export class BasicTableComponent {
   ]
   DATAMAP=[
     {
-      topic:'songs',
+      topic:'songs1',
       urls: [
     "https://www.youtube.com/Exsljuc_hvs","https://vimeo.com/197933516",
     "https://www.youtube.com/watch?v=o5cELP06Mik",
@@ -33,8 +33,7 @@ export class BasicTableComponent {
   string2=''
   func1: any = function getEmbedded(url){
       return this.embedService.embed(url);
-   
-  }
+    }
  
   func3: any = function loopOn2() {
     for (let i = 1; i < this.URLS.length; i++) {
@@ -54,11 +53,13 @@ export class BasicTableComponent {
       let topicSet = this.DATAMAP[i];
       let videoListItem = {
         topic: topicSet.topic,
-        videos: []        
+        videos: [],
+        last:this.func1(this.URLS[2])                
       }
       console.log(topicSet);
       for (let j = 0; j < topicSet.urls.length; j++) {
         videoListItem.videos.push(this.func1(topicSet.urls[j]))
+        
       }
       console.log(videoListItem);
        this.TOPICS.push(videoListItem);
@@ -67,7 +68,7 @@ export class BasicTableComponent {
   }
     
   elements: any = this.TOPICS
-  
+  // elements: any = this.TOPICS[0].videos
   
   headElements = ['ID', 'First', 'Last', 'Handle'];
  constructor(
