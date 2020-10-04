@@ -45,7 +45,32 @@ NAMES=[]
     
 
   ]
+    },
+     {
+      topic:'OUR FRIENDS',
+      urls: [
+    "https://www.youtube.com/watch?v=3wmy6Wy9Wq0",
+    "https://www.youtube.com/watch?v=AYsalrUJb_k",
+    "https://www.youtube.com/watch?v=inwbIfUoLbA",
+    "https://www.youtube.com/watch?v=VFwH7azUchE",
+    "https://www.youtube.com/watch?v=f1oihPYSTW8"
+    
+
+  ]
+    },
+    {
+      topic:'CARS and PLANES',
+      urls: [
+    "https://www.youtube.com/watch?v=OysoJgE90cQ",
+    "https://www.youtube.com/watch?v=pl6L-tXd8yo",
+    "https://www.youtube.com/watch?v=kfB0r_Ig7VU",
+    "https://www.youtube.com/watch?v=zt_ttxwheSc",
+    "https://www.youtube.com/watch?v=7g0xL88ebXs"
+    
+
+  ]
     }
+    
   ]
   // string1=this.embedService(this.URLS[0])
   string2=''
