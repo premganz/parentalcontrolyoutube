@@ -1,0 +1,96 @@
+<section id="about" class="about-section">
+  <div class="container">
+    <div class="section-header text-center">
+      <h2 class="section-title serif">About Manifold Studies</h2>
+      <p class="section-description">
+        We are an interdisciplinary research collective dedicated to advancing 
+        critical scholarship at the intersections of digital humanities, cultural studies, and critical theory.
+      </p>
+    </div>
+
+    <div class="about-content">
+      <div class="about-text">
+        <div class="text-block fade-in-up">
+          <h3 class="text-block-title">Our Mission</h3>
+          <p>
+            Manifold Studies emerged from the recognition that contemporary cultural phenomena 
+            require interdisciplinary approaches that bridge traditional academic boundaries. 
+            We develop innovative methodologies that combine computational analysis with critical theory, 
+            creating new frameworks for understanding culture in the digital age.
+          </p>
+        </div>
+
+        <div class="text-block fade-in-up" style="animation-delay: 0.1s">
+          <h3 class="text-block-title">Our Approach</h3>
+          <p>
+            Our research methodology emphasizes collaborative inquiry, ethical engagement with 
+            digital technologies, and commitment to social justice. We work closely with 
+            communities, institutions, and international partners to ensure our research 
+            has meaningful impact beyond academic circles.
+          </p>
+        </div>
+
+        <div class="text-block fade-in-up" style="animation-delay: 0.2s">
+          <h3 class="text-block-title">Impact & Vision</h3>
+          <p>
+            Through our publications, projects, and partnerships, we aim to shape the future 
+            of interdisciplinary research. Our work contributes to ongoing conversations about 
+            digital equity, cultural representation, and the role of technology in society.
+          </p>
+        </div>
+      </div>
+
+      <div class="about-stats">
+        <div class="stat-item fade-in-up" style="animation-delay: 0.3s">
+          <div class="stat-number">50+</div>
+          <div class="stat-label">Publications</div>
+        </div>
+        <div class="stat-item fade-in-up" style="animation-delay: 0.4s">
+          <div class="stat-number">12</div>
+          <div class="stat-label">Active Projects</div>
+        </div>
+        <div class="stat-item fade-in-up" style="animation-delay: 0.5s">
+          <div class="stat-number">25+</div>
+          <div class="stat-label">Collaborators</div>
+        </div>
+        <div class="stat-item fade-in-up" style="animation-delay: 0.6s">
+          <div class="stat-number">8</div>
+          <div class="stat-label">Countries</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Team Section -->
+    <div class="team-section">
+      <h3 class="subsection-title text-center">Our Team</h3>
+      <div class="team-grid grid grid-3">
+        <div 
+          *ngFor="let member of teamMembers; let i = index" 
+          class="team-member-card card fade-in-up"
+          [style.animation-delay]="(i * 0.1) + 's'"
+        >
+          <div class="member-image">
+            <img [src]="member.image" [alt]="member.name" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h4 class="member-name">{{ member.name }}</h4>
+            <p class="member-title">{{ member.title }}</p>
+            <p class="member-bio">{{ member.bio }}</p>
+            <div class="member-expertise">
+              <span *ngFor="let skill of member.expertise" class="expertise-tag">
+                {{ skill }}
+              </span>
+            </div>
+            <a [href]="'mailto:' + member.email" class="member-contact">
+              Contact
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

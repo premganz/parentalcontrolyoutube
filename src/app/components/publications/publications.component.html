@@ -1,0 +1,94 @@
+<section id="publications" class="publications">
+  <div class="container">
+    <div class="section-header text-center">
+      <h2 class="section-title serif">Publications</h2>
+      <p class="section-description">
+        Our research contributions span peer-reviewed journals, academic books, 
+        and conference proceedings in digital humanities and cultural studies.
+      </p>
+    </div>
+
+    <!-- Featured Publications -->
+    <div class="featured-section mb-5">
+      <h3 class="subsection-title">Featured Publications</h3>
+      <div class="publications-grid grid grid-2">
+        <div 
+          *ngFor="let pub of featuredPublications; let i = index" 
+          class="publication-card card featured fade-in-up"
+          [style.animation-delay]="(i * 0.1) + 's'"
+        >
+          <div class="card-body">
+            <div class="publication-header">
+              <span class="publication-type">
+                <span class="type-icon">{{ getTypeIcon(pub.type) }}</span>
+                {{ getTypeLabel(pub.type) }}
+              </span>
+              <span class="publication-year">{{ pub.year }}</span>
+            </div>
+            
+            <h4 class="publication-title">{{ pub.title }}</h4>
+            
+            <div class="publication-authors">
+              <span *ngFor="let author of pub.authors; let last = last">
+                {{ author }}<span *ngIf="!last">, </span>
+              </span>
+            </div>
+            
+            <div class="publication-journal">{{ pub.journal }}</div>
+            
+            <p class="publication-abstract">{{ pub.abstract }}</p>
+            
+            <div class="publication-actions">
+              <a *ngIf="pub.doi" [href]="'https://doi.org/' + pub.doi" class="btn btn-primary btn-sm" target="_blank">
+                View Article
+              </a>
+              <button class="btn btn-outline btn-sm">Cite</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent Publications -->
+    <div class="recent-section">
+      <h3 class="subsection-title">Recent Publications</h3>
+      <div class="publications-list">
+        <div 
+          *ngFor="let pub of recentPublications; let i = index" 
+          class="publication-item fade-in-up"
+          [style.animation-delay]="(i * 0.05) + 's'"
+        >
+          <div class="publication-meta">
+            <span class="type-icon">{{ getTypeIcon(pub.type) }}</span>
+            <span class="publication-year">{{ pub.year }}</span>
+          </div>
+          
+          <div class="publication-content">
+            <h4 class="publication-title">{{ pub.title }}</h4>
+            <div class="publication-authors">
+              <span *ngFor="let author of pub.authors; let last = last">
+                {{ author }}<span *ngIf="!last">, </span>
+              </span>
+            </div>
+            <div class="publication-journal">{{ pub.journal }}</div>
+          </div>
+          
+          <div class="publication-links">
+            <a *ngIf="pub.doi" [href]="'https://doi.org/' + pub.doi" target="_blank" class="publication-link">
+              DOI
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
+                <polyline points="15,3 21,3 21,9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-4">
+        <a href="#" class="btn btn-outline">View All Publications</a>
+      </div>
+    </div>
+  </div>
+</section>

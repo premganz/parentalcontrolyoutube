@@ -1,0 +1,39 @@
+<section id="research" class="research-areas">
+  <div class="container">
+    <div class="section-header text-center">
+      <h2 class="section-title serif">Research Areas</h2>
+      <p class="section-description">
+        Our interdisciplinary approach spans multiple fields of inquiry, 
+        fostering innovative research at the intersections of humanities and technology.
+      </p>
+    </div>
+    
+    <div class="research-grid grid grid-2">
+      <div 
+        *ngFor="let area of researchAreas; let i = index" 
+        class="research-card card fade-in-up"
+        [style.animation-delay]="(i * 0.1) + 's'"
+      >
+        <div class="card-body">
+          <div class="research-icon">{{ area.icon }}</div>
+          <h3 class="research-title">{{ area.title }}</h3>
+          <p class="research-description">{{ area.description }}</p>
+          <div class="research-topics">
+            <span 
+              *ngFor="let topic of area.topics" 
+              class="topic-tag"
+            >
+              {{ topic }}
+            </span>
+          </div>
+          <a href="#" class="research-link">
+            Learn More
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 17l9.2-9.2M17 17V7H7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

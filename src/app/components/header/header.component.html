@@ -1,0 +1,46 @@
+<header class="header">
+  <div class="container">
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <a routerLink="/home" class="brand-link">
+          <h1 class="brand-title serif">Manifold Studies</h1>
+          <p class="brand-subtitle">Interdisciplinary Research & Analysis</p>
+        </a>
+      </div>
+      
+      <button 
+        class="mobile-menu-toggle"
+        (click)="toggleMenu()"
+        [class.active]="isMenuOpen"
+        aria-label="Toggle navigation menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <div class="navbar-menu" [class.active]="isMenuOpen">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a routerLink="/home" class="nav-link" (click)="closeMenu()">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#research" class="nav-link" (click)="closeMenu()">Research</a>
+          </li>
+          <li class="nav-item">
+            <a href="#publications" class="nav-link" (click)="closeMenu()">Publications</a>
+          </li>
+          <li class="nav-item">
+            <a href="#projects" class="nav-link" (click)="closeMenu()">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a href="#about" class="nav-link" (click)="closeMenu()">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link" (click)="closeMenu()">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>

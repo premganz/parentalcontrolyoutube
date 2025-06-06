@@ -1,28 +1,25 @@
 import { Component } from '@angular/core';
-import { EmbedVideoService } from 'ngx-embed-video';
-
+import { RouterOutlet } from '@angular/router';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
-  selector: 'my-app',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet, HeaderComponent, FooterComponent],
+  template: `
+    <app-header></app-header>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+    <app-footer></app-footer>
+  `,
+  styles: [`
+    main {
+      min-height: calc(100vh - 140px);
+    }
+  `]
 })
 export class AppComponent {
-  name = 'Parental Control Videos';
-
-  yt_iframe_html: any;
-  vimeo_iframe_html: any;
-  dm_iframe_html: any;
-  
-  vimeoUrl = "https://vimeo.com/197933516";
-  youtubeUrl = "https://www.youtube.com/watch?v=Exsljuc_hvs";
-  dailymotionUrl = "https://www.dailymotion.com/video/x20qnej_red-bull-presents-wild-ride-bmx-mtb-dirt_sport";
-
-  constructor(
-    private embedService: EmbedVideoService
-  ) {
-    this.yt_iframe_html = this.embedService.embed(this.youtubeUrl);
-    this.vimeo_iframe_html = this.embedService.embed(this.vimeoUrl);
-    this.dm_iframe_html = this.embedService.embed(this.dailymotionUrl);
-  }
+  title = 'Manifold Studies';
 }

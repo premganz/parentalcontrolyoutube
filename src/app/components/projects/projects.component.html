@@ -1,0 +1,59 @@
+<section id="projects" class="projects">
+  <div class="container">
+    <div class="section-header text-center">
+      <h2 class="section-title serif">Research Projects</h2>
+      <p class="section-description">
+        Our collaborative research projects span multiple institutions and disciplines, 
+        addressing critical questions in digital humanities and cultural studies.
+      </p>
+    </div>
+
+    <div class="projects-grid grid grid-2">
+      <div 
+        *ngFor="let project of projects; let i = index" 
+        class="project-card card fade-in-up"
+        [style.animation-delay]="(i * 0.1) + 's'"
+      >
+        <div class="project-image">
+          <img [src]="project.image" [alt]="project.title" loading="lazy">
+          <div class="project-overlay">
+            <span class="project-status" [class]="getStatusClass(project.status)">
+              {{ getStatusLabel(project.status) }}
+            </span>
+          </div>
+        </div>
+        
+        <div class="card-body">
+          <div class="project-header">
+            <h3 class="project-title">{{ project.title }}</h3>
+            <span class="project-duration">{{ project.duration }}</span>
+          </div>
+          
+          <p class="project-description">{{ project.description }}</p>
+          
+          <div class="project-collaborators">
+            <h4 class="collaborators-title">Collaborators:</h4>
+            <ul class="collaborators-list">
+              <li *ngFor="let collaborator of project.collaborators">{{ collaborator }}</li>
+            </ul>
+          </div>
+          
+          <div class="project-tags">
+            <span *ngFor="let tag of project.tags" class="project-tag">{{ tag }}</span>
+          </div>
+          
+          <div class="project-actions">
+            <a *ngIf="project.link" [href]="project.link" class="btn btn-primary btn-sm">
+              Learn More
+            </a>
+            <button class="btn btn-outline btn-sm">Contact Team</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="text-center mt-5">
+      <a href="#" class="btn btn-outline">View All Projects</a>
+    </div>
+  </div>
+</section>
